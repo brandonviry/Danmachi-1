@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Danmachi</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/reponsive.css">
+	<meta name="viewport" content="width=device-width , initial-scale=1.0">
+
+</head>
+<body id="close">
+<audio  src="audio/bienvenue.mp3" autoplay="autoplay"></audio>
+	<header >
+		<h1  >Danmachi</h1>
+		<p>Bienvenue ! </p>
+	
+	</header>
+
+	<section id="close">
+		 <aside>
+			<nav>
+					<ul  >
+					<li><a >Histoire</a>
+						<ul  >
+						<li><a onclick="page1();">Saison 1</a></li>
+						<li><a onclick="page2();">Saison 2</a></li>
+						</ul></li>
+					<li><a >Personnage</a>
+						<ul>
+						<li><a onclick="page3()">Saison 1</a></li>
+						<li><a onclick="page4()">Saison 2</a></li>
+						</ul></li>
+					<li><a onclick="pro();">Produits </a>
+						
+					<li><a onclick="game();">Jeux</a></li>
+					<li><a>-----</a></li>
+					<li><a onclick="end();">Close</a></li>
+				</ul>
+			</nav>
+		 </aside>
+
+		 <aside id="page">	
+	     	<iframe src="bdd/start.html"></iframe>
+	 	 </aside>
+	 	 
+	</section>
+
+	
+
+
+
+<script type="text/javascript" src="js/page.js"></script>
+
+</body>
+</html>

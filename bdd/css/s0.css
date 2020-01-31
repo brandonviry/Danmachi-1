@@ -1,0 +1,74 @@
+.img1
+{
+width:200px; 
+height: 200px;
+}
+.img2
+{
+	width:90px; 
+height: 50px;
+position: absolute;
+left: 15px;
+border-radius: 2px;
+margin-top: 3px;
+}
+h1
+{
+	text-align: center;
+	font-family: 'Anton', sans-serif;
+	color: #0e2b40;
+}
+p
+{
+	font-family: 'Abel', sans-serif;
+	text-align: justify;
+	font-weight: bold;
+
+
+}
+h2
+{
+	background-color: #ffffff;
+	text-align: center;
+	font-size: 2em;
+	color:#000000;
+	border: 3px solid black;
+}
+section 
+{
+	background-color: black;
+	color: white;
+	padding-left:10%;
+	padding-right:10%;
+	padding-top: 1%;
+	padding-bottom: 1%;
+	margin-top: 10%;
+}
+embed
+{
+	width: 100%;
+
+}
+.ban
+{
+	width: 100%;
+}
+.item
+{
+	width: 25%;
+	height:25%;
+}
+.cont
+{
+	display: flex;
+	flex-wrap: nowrap;
+}
+.reduc
+{
+	width: 50%;
+
+}
+body
+{
+	background-color: white;
+}

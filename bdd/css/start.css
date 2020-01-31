@@ -1,0 +1,28 @@
+h1
+{
+	text-align: center;
+	font-family: 'Anton', sans-serif;
+	color: #0e2b40;
+	font-size: 34px;
+}
+p
+{
+	font-family: 'Abel', sans-serif;
+	text-align: center;
+	font-weight: bold;
+	font-size: 24px;
+}
+
+embed 
+{
+	width:100%;
+}
+body
+{
+	background-image: url("../img/babel.png");
+	background-size: 100%;
+}
+header
+{
+	margin-top: 20%;
+}
