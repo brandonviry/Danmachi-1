@@ -1,35 +1,80 @@
+(() => {
+	const MESSAGE_BIENVENUE = "Bienvenue sur la fan page de DanMachi !";
+	const LINK_TO_PAGE = {
+		page1: "bdd/s1.html",
+		page2: "bdd/s2.html",
+		page3: "bdd/s4.html",
+		page4: "bdd/s3.html",
+		pro: "bdd/produit.html",
+		game: "bdd/game.html",
+	};
 
-alert("Bonjour ! Cette fan page a été crée pour  ordinateur  , tablet , TV et smartphone en formas paysage !!!  =) ");
+	const getElement = (id) => document.getElementById(id);
+	const getPageIframe = () => document.querySelector("#page > iframe");
+	const setPageIframe = (page) => {
+		const iframe = getPageIframe();
+		if (!iframe) {
+			console.warn("Iframe not found for page content.");
+			return;
+		}
+		iframe.src = page;
+	};
+	const linkPage = (id, page) => {
+		const elt = getElement(id);
+		if (!elt) {
+			console.warn(`Link element not found: ${id}`);
+			return;
+		}
+		elt.addEventListener("click", (event) => {
+			if (elt.tagName === "A") {
+				event.preventDefault();
+			}
+			setPageIframe(page);
+		});
+	};
+	const enableMobileMenuToggle = () => {
+		const topItems = document.querySelectorAll("nav > ul > li");
+		topItems.forEach((item) => {
+			const submenu = item.querySelector("ul");
+			const trigger = item.querySelector("a");
+			if (!submenu || !trigger) {
+				return;
+			}
 
-	
-function  page1()
-{
-	document.getElementById("page").innerHTML = '<iframe src="bdd/s1.html"></iframe>';
-}
-function  page2()
-{
-	document.getElementById("page").innerHTML = '<iframe src="bdd/s2.html"></iframe>';
-}
-function  page3()
-{
-	document.getElementById("page").innerHTML = '<iframe src="bdd/s4.html"></iframe>';
-}
-function  page4()
-{
-	document.getElementById("page").innerHTML = '<iframe src="bdd/s3.html"></iframe>';
-}
-function  game()
-{
-	document.getElementById("page").innerHTML = '<iframe src="bdd/game.html"></iframe>';
-}
-function  end()
-{
-	document.getElementById("close").innerHTML = '<img style ="width:100%;height:50%;border:3px solid black;"src="bdd/img/best.gif"  ><p style="background-color:white;width:100%;margin:1px;border:3px solid black;text-align:center;position:absolute;top:50%;font-size:2em;">Redirection terminer</p>';
+			trigger.addEventListener("click", (event) => {
+				if (!window.matchMedia("(max-width: 900px)").matches) {
+					return;
+				}
+				event.preventDefault();
+				topItems.forEach((other) => {
+					if (other !== item) {
+						other.classList.remove("is-open");
+					}
+				});
+				item.classList.toggle("is-open");
+			});
+		});
+	};
 
-	window.open("bdd/end.html"); 
+	document.addEventListener("DOMContentLoaded", () => {
+		alert(MESSAGE_BIENVENUE);
 
-}
-function  pro()
-{
-	document.getElementById("page").innerHTML = '<iframe src="bdd/produit.html"></iframe>';
-}
+		Object.entries(LINK_TO_PAGE).forEach(([id, page]) => {
+			linkPage(id, page);
+		});
+
+		enableMobileMenuToggle();
+
+		const endLink = getElement("end");
+		if (!endLink) {
+			console.warn("End link not found: end");
+			return;
+		}
+		endLink.addEventListener("click", (event) => {
+			if (endLink.tagName === "A") {
+				event.preventDefault();
+			}
+			location.href = "bdd/end.html";
+		});
+	});
+})();

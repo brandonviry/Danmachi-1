@@ -1,57 +1,63 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>Danmachi</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/reponsive.css">
-	 <meta name="viewport" content="width=device-width , initial-scale=1.0">
-	 <meta name="description" content="Se site a était réaliser que pour l'entrainement au devellopement web et pour aucun cas financier ">
- 	 <meta name="author" content="VIRY Brandon">
+	<meta name="viewport" content="width=device-width , initial-scale=1.0">
+	<meta name="description"
+		content="Se site a était réaliser que pour l'entrainement au devellopement web et pour aucun cas financier ">
+	<meta name="author" content="VIRY Brandon">
 
 </head>
-<body id="close">
-<audio  src="audio/bienvenue.mp3" autoplay="autoplay"></audio>
-	<header >
-		<h1  >Danmachi</h1>
+
+<body >
+	<audio src="audio/bienvenue.mp3" autoplay="autoplay"></audio>
+	<header>
+		<h1>Danmachi</h1>
 		<p>Bienvenue ! </p>
-	
+
 	</header>
 
 	<section id="close">
-		 <aside>
+		<aside>
 			<nav>
-					<ul  >
-					<li><a >Histoire</a>
-						<ul  >
-						<li><a onclick="page1();">Saison 1</a></li>
-						<li><a onclick="page2();">Saison 2</a></li>
-						</ul></li>
-					<li><a >Personnage</a>
+				<ul>
+					<li><a>Histoire</a>
 						<ul>
-						<li><a onclick="page3()">Saison 1</a></li>
-						<li><a onclick="page4()">Saison 2</a></li>
-						</ul></li>
-					<li><a onclick="pro();">Produits </a>
-						
-					<li><a onclick="game();">Jeux</a></li>
+							<li id="page1"><a>Saison 1</a></li>
+							<li id="page2"><a>Saison 2</a></li>
+						</ul>
+					</li>
+					<li><a>Personnage</a>
+						<ul>
+							<li id="page3"><a>Saison 1</a></li>
+							<li id="page4"><a>Saison 2</a></li>
+						</ul>
+					</li>
+					<li id="pro"><a>Produits </a></li>
+
+					<li id="game"><a>Jeux</a></li>
 					<li><a>-----</a></li>
-					<li><a onclick="end();">Close</a></li>
+					<li id="end"><a>Close</a></li>
 				</ul>
 			</nav>
-		 </aside>
+		</aside>
 
-		 <aside id="page">	
-	     	<iframe src="bdd/start.html"></iframe>
-	 	 </aside>
-	 	 
+		<aside id="page">
+			<iframe id="iframe" src="bdd/start.html"></iframe>
+		</aside>
+
 	</section>
 
-	
 
 
 
-<script type="text/javascript" src="js/page.js"></script>
+
+	<script type="text/javascript" src="js/page.js"></script>
 
 </body>
+
 </html>
