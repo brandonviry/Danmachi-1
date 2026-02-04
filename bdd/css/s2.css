@@ -1,27 +1,26 @@
-h1
-{
-	text-align: center;
-	font-family: 'Anton', sans-serif;
-	color: #0e2b40;
+h1 {
+    text-align: center;
+    font-family: "Anton", sans-serif;
+    color: #0e2b40;
+    background-color: white;
 }
-p
-{
-	font-family: 'Abel', sans-serif;
-	text-align: justify;
-	font-weight: bold;
+p {
+    font-family: "Abel", sans-serif;
+    text-align: justify;
+    font-weight: bold;
+    color: white;
 
+    background-color: black;
+    padding: 0.3rem;
 }
-embed 
-{
-	width:100%;
+embed {
+    width: 100%;
 }
-body
-{
-	background-image: url("../img/familia_loki.png");
-	background-size: 100%;
+body {
+    background-image: url("../img/familia_loki.png");
+    background-size: 100%;
 }
 
-header > img
-{
-	width: 21%;
+header > img {
+    width: 21%;
 }

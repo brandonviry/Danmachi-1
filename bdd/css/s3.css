@@ -1,63 +1,53 @@
-h1
-{
-	text-align: center;
-	font-family: 'Anton', sans-serif;
-	color: #0e2b40;
+h1 {
+    text-align: center;
+    font-family: "Anton", sans-serif;
+    color: #0e2b40;
+    background-color: white;
 }
-p
-{
-	font-family: 'Abel', sans-serif;
-	text-align: justify;
-	font-weight: bold;
-
+p {
+    font-family: "Abel", sans-serif;
+    text-align: justify;
+    font-weight: bold;
+    color: white;
+    background-color: black;
+    padding: 0.3rem;
 }
-embed 
-{
-	width:100%;
+embed {
+    width: 100%;
 }
-body
-{
-	background-image: url("../img/familia_loki.png");
-	background-size: 100%;
-}
-
-header > img
-{
-	width: 21%;
+body {
+    background-image: url("../img/familia_loki.png");
+    background-size: 100%;
 }
 
-h2
-{
-	background-color: #ffffff;
-	text-align: center;
-	font-size: 2em;
-	color:#000000;
-}
-h3
-{
-	border: 3px solid #ffffff;
-	text-align: center;
-	font-size: 2em;
-	background-color: #000000;
-	color:#ffffff;
-}
-section > img
-{
-width:125px; 
-height :150px;
-margin-left: 3px;
-margin-right:3px;
-
-}
-section
-{
-	margin-left: 15%;
-	margin-right: 15%;
-	background-color: white;
-}
-section > img:hover
-{
-background-color: black;
-
+header > img {
+    width: 21%;
 }
 
+h2 {
+    background-color: #ffffff;
+    text-align: center;
+    font-size: 2em;
+    color: #000000;
+}
+h3 {
+    border: 3px solid #ffffff;
+    text-align: center;
+    font-size: 2em;
+    background-color: #000000;
+    color: #ffffff;
+}
+section > img {
+    width: 125px;
+    height: 150px;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+section {
+    margin-left: 15%;
+    margin-right: 15%;
+    background-color: white;
+}
+section > img:hover {
+    background-color: black;
+}
