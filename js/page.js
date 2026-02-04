@@ -56,8 +56,38 @@
 		});
 	};
 
+	const createWelcomeModal = () => {
+		const overlay = document.createElement("div");
+		overlay.id = "welcome-modal-overlay";
+
+		const modal = document.createElement("div");
+		modal.className = "welcome-modal";
+
+		const title = document.createElement("h2");
+		title.className = "welcome-modal-title";
+		title.textContent = "Bienvenue";
+
+		const text = document.createElement("p");
+		text.className = "welcome-modal-text";
+		text.textContent = MESSAGE_BIENVENUE;
+
+		const btn = document.createElement("button");
+		btn.className = "welcome-modal-btn";
+		btn.textContent = "Entrer";
+		btn.addEventListener("click", () => {
+			overlay.classList.add("fade-out");
+			setTimeout(() => overlay.remove(), 300);
+		});
+
+		modal.appendChild(title);
+		modal.appendChild(text);
+		modal.appendChild(btn);
+		overlay.appendChild(modal);
+		document.body.appendChild(overlay);
+	};
+
 	document.addEventListener("DOMContentLoaded", () => {
-		alert(MESSAGE_BIENVENUE);
+		createWelcomeModal();
 
 		Object.entries(LINK_TO_PAGE).forEach(([id, page]) => {
 			linkPage(id, page);
