@@ -62,6 +62,17 @@
 
 
 	</section>
+
+	<script>
+		document.addEventListener('DOMContentLoaded', ()=> {
+			document.querySelectorAll("img").forEach((img) => {
+				img.addEventListener("click", (e)=>{	
+					window.open(e.target.src,'_blank');
+				})
+			})
+
+		});		
+	</script>
 	
 
 
