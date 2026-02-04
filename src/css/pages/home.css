@@ -14,18 +14,17 @@ p {
 embed {
     width: 100%;
 }
-body {
-    background-image: url("../img/Babel.png");
-    background-size: 100% auto;
-    background-repeat: repeat-y;
+html, body {
+    height: 100%;
+    margin: 0;
+}
 
-    top: 0px;
-    bottom: 0px;
+body {
+    background-image: url("../../assets/images/babel.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
 }
 header {
     margin-top: 20%;
-}
-
-div {
-    margin-left: 40%;
 }

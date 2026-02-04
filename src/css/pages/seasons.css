@@ -9,18 +9,14 @@ p {
     text-align: justify;
     font-weight: bold;
     color: white;
-
     background-color: black;
     padding: 0.3rem;
 }
+
 embed {
     width: 100%;
 }
 body {
-    background-image: url("../img/familia_loki.png");
+    background-image: url("../../assets/images/bells1.png");
     background-size: 100%;
-}
-
-header > img {
-    width: 21%;
 }
