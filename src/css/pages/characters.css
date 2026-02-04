@@ -1,53 +1,341 @@
-h1 {
-    text-align: center;
-    font-family: "Anton", sans-serif;
-    color: #0e2b40;
-    background-color: white;
+/* ============================================
+   DANMACHI - PERSONNAGES S1 & S2
+   Design System cohérent avec le branding
+   ============================================ */
+
+/* Variables */
+:root {
+    --primary-dark: #0e2b40;
+    --primary-medium: #173d59;
+    --accent-silver: #c0c4cd;
+    --pure-white: #ffffff;
+    --pure-black: #000000;
+    --card-bg: rgba(255, 255, 255, 0.95);
+    --radius: 8px;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.4);
+    --transition: all 0.3s ease;
 }
-p {
-    font-family: "Abel", sans-serif;
-    text-align: justify;
-    font-weight: bold;
-    color: white;
-    background-color: black;
-    padding: 0.3rem;
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-embed {
-    width: 100%;
-}
+
 body {
-    background-image: url("../../assets/images/familia-loki.png");
-    background-size: 100%;
+    font-family: 'Abel', sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+    color: var(--pure-black);
 }
 
-header > img {
-    width: 21%;
+/* ============================================
+   CONTAINER
+   ============================================ */
+
+.characters-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-h2 {
-    background-color: #ffffff;
+/* ============================================
+   HEADER
+   ============================================ */
+
+.characters-header {
     text-align: center;
-    font-size: 2em;
-    color: #000000;
+    margin-bottom: 2.5rem;
 }
-h3 {
-    border: 3px solid #ffffff;
+
+.logo-wrapper {
+    margin-bottom: 1.5rem;
+    animation: fadeInDown 0.8s ease-out;
+}
+
+.page-logo {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5));
+    border-radius: var(--radius);
+    transition: var(--transition);
+}
+
+/* Logo S2 (fond blanc) */
+.logo-wrapper img[src*="logo-s2"] {
+    background: var(--pure-white);
+    padding: 1rem 2rem;
+    border: 3px solid var(--accent-silver);
+    box-shadow: var(--shadow);
+}
+
+.page-logo:hover {
+    transform: scale(1.02);
+}
+
+/* Title Badge */
+.title-badge {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--primary-dark);
+    padding: 1rem 2.5rem;
+    border-radius: var(--radius);
+    border: 3px solid var(--accent-silver);
+    box-shadow: 
+        var(--shadow),
+        0 0 20px rgba(192, 196, 205, 0.2);
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.s1-badge {
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary-medium));
+}
+
+.season-label {
+    font-family: 'Abel', sans-serif;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--accent-silver);
+    margin-bottom: 0.3rem;
+}
+
+.title-badge h1 {
+    font-family: 'Anton', sans-serif;
+    font-size: 2.2rem;
+    color: var(--pure-white);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    background: transparent;
+}
+
+/* ============================================
+   GRILLE DES FAMILIA
+   ============================================ */
+
+.familia-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+/* ============================================
+   CARTE FAMILIA
+   ============================================ */
+
+.familia-card {
+    background: var(--card-bg);
+    border: 2px solid var(--pure-black);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: var(--transition);
+    animation: fadeIn 0.6s ease-out both;
+}
+
+.familia-card:nth-child(1) { animation-delay: 0.1s; }
+.familia-card:nth-child(2) { animation-delay: 0.2s; }
+.familia-card:nth-child(3) { animation-delay: 0.3s; }
+.familia-card:nth-child(4) { animation-delay: 0.4s; }
+.familia-card:nth-child(5) { animation-delay: 0.5s; }
+.familia-card:nth-child(6) { animation-delay: 0.6s; }
+
+.familia-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+/* Header de Familia avec couleurs thématiques */
+.familia-header {
+    padding: 1rem 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--pure-black);
+}
+
+.familia-header h2 {
+    font-family: 'Anton', sans-serif;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--pure-white);
+    background: transparent;
+    margin: 0 auto;
+}
+
+/* Couleurs par Familia */
+.familia-header.loki { background: linear-gradient(135deg, #c41e3a, #8b0000); }
+.familia-header.hestia { background: linear-gradient(135deg, #0066cc, #003d7a); }
+.familia-header.dionysos { background: linear-gradient(135deg, #722f37, #4a1c24); }
+.familia-header.freya { background: linear-gradient(135deg, #c0c0c0, #808080); }
+.familia-header.guilde { background: linear-gradient(135deg, #daa520, #b8860b); }
+.familia-header.unknown { background: linear-gradient(135deg, #4a4a4a, #2a2a2a); }
+.familia-header.hephaistios { background: linear-gradient(135deg, #ff4500, #cc3700); }
+.familia-header.soma { background: linear-gradient(135deg, #9370db, #663399); }
+.familia-header.pub { background: linear-gradient(135deg, #228b22, #006400); }
+
+/* ============================================
+   LISTE DES PERSONNAGES
+   ============================================ */
+
+.characters-list {
+    padding: 1.25rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 1rem;
+}
+
+.character-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    font-size: 2em;
-    background-color: #000000;
-    color: #ffffff;
+    transition: var(--transition);
+    cursor: pointer;
 }
-section > img {
-    width: 125px;
-    height: 150px;
-    margin-left: 3px;
-    margin-right: 3px;
+
+.character-item:hover {
+    transform: scale(1.05);
 }
-section {
-    margin-left: 15%;
-    margin-right: 15%;
-    background-color: white;
+
+.character-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border-radius: 50%;
+    border: 3px solid var(--accent-silver);
+    background: var(--pure-white);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    transition: var(--transition);
+    margin-bottom: 0.5rem;
 }
-section > img:hover {
-    background-color: black;
+
+.character-item:hover img {
+    border-color: var(--primary-dark);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.character-name {
+    font-family: 'Abel', sans-serif;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: var(--primary-dark);
+    text-transform: capitalize;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+.characters-footer {
+    text-align: center;
+    padding: 2rem 0 1rem;
+    margin-top: auto;
+}
+
+.characters-footer p {
+    font-size: 0.9rem;
+    color: var(--accent-silver);
+    opacity: 0.8;
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 768px) {
+    .characters-container {
+        padding: 1.5rem 1rem;
+    }
+    
+    .page-logo {
+        max-width: 240px;
+    }
+    
+    .title-badge h1 {
+        font-size: 1.8rem;
+    }
+    
+    .familia-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .familia-header h2 {
+        font-size: 1.1rem;
+    }
+    
+    .characters-list {
+        grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+    }
+    
+    .character-item img {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+@media (max-width: 480px) {
+    .characters-container {
+        padding: 1rem 0.75rem;
+    }
+    
+    .page-logo {
+        max-width: 180px;
+    }
+    
+    .logo-wrapper img[src*="logo-s2"] {
+        padding: 0.75rem 1rem;
+    }
+    
+    .title-badge {
+        padding: 0.75rem 1.5rem;
+    }
+    
+    .title-badge h1 {
+        font-size: 1.4rem;
+    }
+    
+    .characters-list {
+        grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+        gap: 0.75rem;
+    }
+    
+    .character-item img {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .character-name {
+        font-size: 0.8rem;
+    }
 }

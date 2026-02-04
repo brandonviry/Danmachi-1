@@ -1,31 +1,68 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-	<title>Saison 2</title>
-	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="../src/css/pages/seasons-s2.css">
-	<link href="https://fonts.googleapis.com/css?family=Anton|Abel" rel="stylesheet"> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saison 2 - Sword Oratoria</title>
+    <link rel="stylesheet" type="text/css" href="../src/css/pages/seasons.css">
+    <link href="https://fonts.googleapis.com/css?family=Anton|Abel" rel="stylesheet">
 </head>
-<body>
+<body class="season-page season-2">
+    
+    <div class="season-container">
+        <!-- Header avec logo -->
+        <header class="season-header">
+            <div class="logo-wrapper s2-logo">
+                <img src="../src/assets/images/logo-s2.jpg" alt="Logo Sword Oratoria" class="season-logo">
+            </div>
+            <div class="title-badge s2-badge">
+                <span class="season-label">Saison 2</span>
+                <h1>Sword Oratoria</h1>
+            </div>
+        </header>
 
-	<header>
-		<img src="../src/assets/images/logo-s2.jpg" alt="Logo saison 2">
-		<h1>Saison 2</h1>
+        <!-- Contenu principal -->
+        <main class="season-content">
+            <!-- Synopsis -->
+            <section class="content-card synopsis-card">
+                <div class="card-header">
+                    <span class="card-icon">⚔️</span>
+                    <h2>Synopsis</h2>
+                </div>
+                <div class="card-body">
+                    <p class="lead">La ville labyrinthe, <strong>Orario</strong>, aussi appelée <em>Dungeon</em>, est le lieu où se dirigent tous les guerriers qui veulent vivre dangereusement.</p>
+                    
+                    <p>Cette saison nous entraîne dans les aventures de <strong>Aiz Wallenstein</strong>, l'une des plus fortes épéistes de la Familia Loki, et de ses compagnons, au fil de leurs différentes quêtes dans les profondeurs du donjon.</p>
+                    
+                    <p>Une perspective différente qui se concentre sur les <strong>épéistes de première classe</strong> et leurs batailles contre les monstres les plus redoutables.</p>
+                </div>
+            </section>
 
-		
-	</header>
+            <!-- Bande-annonce -->
+            <section class="content-card video-card">
+                <div class="card-header">
+                    <span class="card-icon">▶️</span>
+                    <h2>Bande-annonce</h2>
+                </div>
+                <div class="card-body">
+                    <div class="video-wrapper">
+                        <iframe 
+                            src="https://www.youtube.com/embed/cHvYC49JD28" 
+                            title="Bande-annonce Sword Oratoria"
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+            </section>
+        </main>
 
-	<section>
-    <p>La ville labyrinthe, Orario, aussi appelé Dungeon est le lieu où se dirigent tous les guerriers qui veulent vivre dangereusement.</p>
-
-	<p>L’histoire nous entraîne dans les aventures de Aiz Wallenstein, l’une des plus fortes épéistes, et de ses compagnons, au fil de leurs différentes quêtes.</p>
-	</section>
-	<section>
-		<embed width="420" height="345" src="https://www.youtube.com/embed/cHvYC49JD28">
-		</embed>
-	</section>
-
-
+        <!-- Footer -->
+        <footer class="season-footer">
+            <p>© Danmachi - Sword Oratoria</p>
+        </footer>
+    </div>
 
 </body>
 </html>

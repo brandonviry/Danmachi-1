@@ -1,65 +1,117 @@
-h1 {
-	text-align: center;
-	color: white;
-	background-color: black;
-	margin: 0;
-	padding: 0.75rem 0.5rem;
+/* ============================================
+   DANMACHI - PRODUITS DÉRIVÉS
+   Grille de produits
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-	margin: 0;
-	background-color: #111111;
-	font-family: "Abel", Arial, sans-serif;
-	overflow-y: auto;
+    font-family: 'Abel', Arial, sans-serif;
+    background-color: #111111;
+    overflow-y: auto;
 }
 
-section {
-	padding: 1rem;
-	display: grid;
-	gap: 0.75rem;
-	grid-template-columns: repeat(5, 1fr);
-	align-items: start;
+/* Header */
+h1 {
+    text-align: center;
+    font-family: 'Anton', sans-serif;
+    font-size: 2rem;
+    color: #ffffff;
+    background-color: #000000;
+    margin: 0;
+    padding: 1rem 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 3px solid #c0c4cd;
 }
 
-img {
-	width: 100%;
-	height: 150px;
-	object-fit: contain;
-	display: block;
-	background-color: white;
-	padding: 6px;
-	border: 4px solid white;
-	border-radius: 6px;
-	box-sizing: border-box;
+/* Grille de produits */
+.products-grid {
+    padding: 1.5rem;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(5, 1fr);
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
-img:hover {
-	opacity: 0.8;
-	cursor: pointer;
+/* Card produit */
+.product-card {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    padding: 6px;
+    border: 4px solid #ffffff;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    cursor: pointer;
 }
 
-img:active {
-	opacity: 1;
-	transform: scale(0.96);
+.product-card:hover {
+    opacity: 0.9;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(192, 196, 205, 0.3);
 }
+
+.product-card:active {
+    opacity: 1;
+    transform: scale(0.96);
+}
+
+.product-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+    display: block;
+    border-radius: 4px;
+}
+
+.product-name {
+    display: block;
+    text-align: center;
+    font-family: 'Abel', sans-serif;
+    font-size: 0.85rem;
+    color: #0e2b40;
+    font-weight: bold;
+    padding: 0.5rem 0.25rem 0;
+    line-height: 1.3;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
 
 @media (max-width: 600px) {
-	section {
-		grid-template-columns: repeat(2, 1fr);
-	}
-	img {
-		height: 120px;
-	}
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 1rem;
+    }
+    
+    .product-card img {
+        height: 120px;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    .product-name {
+        font-size: 0.75rem;
+    }
 }
 
 @media (min-width: 601px) and (max-width: 1000px) {
-	section {
-		grid-template-columns: repeat(3, 1fr);
-	}
+    .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 @media (min-width: 1001px) and (max-width: 1400px) {
-	section {
-		grid-template-columns: repeat(4, 1fr);
-	}
+    .products-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }

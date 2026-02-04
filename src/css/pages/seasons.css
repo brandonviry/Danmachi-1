@@ -1,22 +1,411 @@
-h1 {
-    text-align: center;
-    font-family: "Anton", sans-serif;
-    color: #0e2b40;
-    background-color: white;
-}
-p {
-    font-family: "Abel", sans-serif;
-    text-align: justify;
-    font-weight: bold;
-    color: white;
-    background-color: black;
-    padding: 0.3rem;
+/* ============================================
+   DANMACHI - SAISONS 1 & 2 
+   Design System cohérent avec le branding
+   ============================================ */
+
+/* Variables du branding */
+:root {
+    --primary-dark: #0e2b40;
+    --primary-medium: #173d59;
+    --accent-silver: #c0c4cd;
+    --pure-white: #ffffff;
+    --pure-black: #000000;
+    --bg-overlay: rgba(14, 43, 64, 0.85);
+    --card-bg: rgba(255, 255, 255, 0.95);
+    --radius: 8px;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.4);
+    --transition: all 0.3s ease;
 }
 
-embed {
-    width: 100%;
+/* Reset et base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
+html {
+    font-size: 16px;
+}
+
 body {
+    font-family: 'Abel', sans-serif;
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* ============================================
+   ARRIÈRE-PLANS SPÉCIFIQUES PAR SAISON
+   ============================================ */
+
+.season-1 {
     background-image: url("../../assets/images/bells1.png");
-    background-size: 100%;
+    background-size: cover;
+    background-position: center top;
+    background-attachment: fixed;
+}
+
+.season-2 {
+    background-image: url("../../assets/images/familia-loki.png");
+    background-size: cover;
+    background-position: center top;
+    background-attachment: fixed;
+}
+
+/* Overlay sur l'arrière-plan */
+.season-page::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(14, 43, 64, 0.9) 0%,
+        rgba(14, 43, 64, 0.7) 50%,
+        rgba(23, 61, 89, 0.8) 100%
+    );
+    z-index: -1;
+}
+
+/* ============================================
+   CONTAINER PRINCIPAL
+   ============================================ */
+
+.season-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ============================================
+   HEADER - Logo et titre
+   ============================================ */
+
+.season-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.logo-wrapper {
+    margin-bottom: 1.5rem;
+    animation: fadeInDown 0.8s ease-out;
+}
+
+.season-logo {
+    max-width: 320px;
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
+    transition: var(--transition);
+}
+
+.season-logo:hover {
+    transform: scale(1.02);
+    filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.5));
+}
+
+/* Logo S2 a un fond blanc, on l'encadre */
+.s2-logo .season-logo {
+    background: var(--pure-white);
+    padding: 1rem 2rem;
+    border-radius: var(--radius);
+    border: 3px solid var(--accent-silver);
+    box-shadow: var(--shadow);
+}
+
+/* Badge titre */
+.title-badge {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--pure-white);
+    padding: 1rem 2.5rem;
+    border-radius: var(--radius);
+    border: 3px solid var(--pure-black);
+    box-shadow: 
+        var(--shadow),
+        0 0 20px rgba(192, 196, 205, 0.3);
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.s2-badge {
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary-medium));
+    border-color: var(--accent-silver);
+}
+
+.season-label {
+    font-family: 'Abel', sans-serif;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--primary-medium);
+    margin-bottom: 0.3rem;
+}
+
+.s2-badge .season-label {
+    color: var(--accent-silver);
+}
+
+.title-badge h1 {
+    font-family: 'Anton', sans-serif;
+    font-size: 2.2rem;
+    color: var(--primary-dark);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+    background: transparent;
+}
+
+.s2-badge h1 {
+    color: var(--pure-white);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* ============================================
+   CONTENU - Cards
+   ============================================ */
+
+.season-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    flex: 1;
+}
+
+.content-card {
+    background: var(--card-bg);
+    border: 2px solid var(--pure-black);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: var(--transition);
+    animation: fadeIn 0.8s ease-out 0.4s both;
+}
+
+.content-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+}
+
+.video-card {
+    animation-delay: 0.6s;
+}
+
+/* Header de card */
+.card-header {
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary-medium));
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    border-bottom: 2px solid var(--pure-black);
+}
+
+.card-icon {
+    font-size: 1.5rem;
+}
+
+.card-header h2 {
+    font-family: 'Anton', sans-serif;
+    font-size: 1.4rem;
+    color: var(--pure-white);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: transparent;
+    margin: 0;
+}
+
+/* Corps de card */
+.card-body {
+    padding: 1.5rem;
+}
+
+/* Synopsis */
+.synopsis-card p {
+    font-family: 'Abel', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--pure-black);
+    margin-bottom: 1rem;
+    text-align: justify;
+}
+
+.synopsis-card p:last-child {
+    margin-bottom: 0;
+}
+
+.synopsis-card .lead {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: var(--primary-dark);
+    border-left: 4px solid var(--primary-medium);
+    padding-left: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.synopsis-card strong {
+    color: var(--primary-dark);
+    font-weight: bold;
+}
+
+.synopsis-card em {
+    font-style: italic;
+    color: var(--primary-medium);
+}
+
+/* Video */
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* Ratio 16:9 */
+    height: 0;
+    overflow: hidden;
+    background: var(--pure-black);
+    border-radius: 4px;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+.season-footer {
+    text-align: center;
+    padding: 2rem 0 1rem;
+    margin-top: auto;
+}
+
+.season-footer p {
+    font-family: 'Abel', sans-serif;
+    font-size: 0.9rem;
+    color: var(--accent-silver);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    opacity: 0.8;
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 768px) {
+    .season-container {
+        padding: 1.5rem 1rem;
+    }
+    
+    .season-logo {
+        max-width: 260px;
+    }
+    
+    .s2-logo .season-logo {
+        padding: 0.75rem 1.5rem;
+    }
+    
+    .title-badge {
+        padding: 0.75rem 1.5rem;
+    }
+    
+    .title-badge h1 {
+        font-size: 1.6rem;
+    }
+    
+    .card-header h2 {
+        font-size: 1.2rem;
+    }
+    
+    .synopsis-card p {
+        font-size: 1rem;
+    }
+    
+    .synopsis-card .lead {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .season-container {
+        padding: 1rem 0.75rem;
+    }
+    
+    .season-header {
+        margin-bottom: 1.5rem;
+    }
+    
+    .season-logo {
+        max-width: 200px;
+    }
+    
+    .title-badge {
+        padding: 0.6rem 1.2rem;
+    }
+    
+    .title-badge h1 {
+        font-size: 1.3rem;
+    }
+    
+    .season-label {
+        font-size: 0.75rem;
+    }
+    
+    .card-header {
+        padding: 0.75rem 1rem;
+    }
+    
+    .card-header h2 {
+        font-size: 1.1rem;
+    }
+    
+    .card-icon {
+        font-size: 1.2rem;
+    }
+    
+    .card-body {
+        padding: 1rem;
+    }
+    
+    .synopsis-card p {
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
 }

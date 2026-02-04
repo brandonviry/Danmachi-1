@@ -1,30 +1,76 @@
-h1 {
-    text-align: center;
-    font-family: "Anton", sans-serif;
-    color: #0e2b40;
-    font-size: 34px;
-}
-p {
-    font-family: "Abel", sans-serif;
-    text-align: center;
-    font-weight: bold;
-    font-size: 24px;
+/* ============================================
+   DANMACHI - PAGE D'ACCUEIL
+   Structure simple conservée
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-embed {
-    width: 100%;
-}
 html, body {
     height: 100%;
-    margin: 0;
 }
 
 body {
+    font-family: "Abel", sans-serif;
     background-image: url("../../assets/images/babel.png");
     background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
+
+/* Header */
 header {
     margin-top: 20%;
+    text-align: center;
+}
+
+h1 {
+    font-family: "Anton", sans-serif;
+    font-size: 3rem;
+    color: #0e2b40;
+    text-shadow: 
+        2px 2px 0 #ffffff,
+        -1px -1px 0 #ffffff,
+        1px -1px 0 #ffffff,
+        -1px 1px 0 #ffffff,
+        1px 1px 0 #ffffff;
+    letter-spacing: 2px;
+}
+
+/* Section */
+section {
+    margin-top: 2rem;
+    padding: 0 2rem;
+    max-width: 600px;
+    text-align: center;
+}
+
+p {
+    font-family: "Abel", sans-serif;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 
+        2px 2px 4px rgba(0, 0, 0, 0.8),
+        0 0 20px rgba(0, 0, 0, 0.5);
+    line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+    
+    p {
+        font-size: 1.1rem;
+    }
 }

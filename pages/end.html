@@ -1,38 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-	<title>Au revoir</title>
-	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="../src/css/pages/end.css">
-	<link href="https://fonts.googleapis.com/css?family=Anton|Abel" rel="stylesheet"> 
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Au revoir - Danmachi</title>
+    <link rel="stylesheet" type="text/css" href="../src/css/pages/end.css">
+    <link href="https://fonts.googleapis.com/css?family=Anton|Abel" rel="stylesheet">
 </head>
 <body>
 
-	<header>
-	<div class="bk">
+    <!-- Fenêtre centrale style macOS -->
+    <div class="game-window">
+        <!-- Barre de titre macOS -->
+        <div class="window-titlebar">
+            <div class="window-buttons">
+                <span class="btn close"></span>
+                <span class="btn minimize"></span>
+                <span class="btn maximize"></span>
+            </div>
+            <span class="window-title">Orario.exe</span>
+        </div>
+        
+        <!-- Zone de jeu avec Babel et les persos -->
+        <div class="game-screen">
+            <div class="babel-bg"></div>
+            
+            <div class="walkers">
+                <div class="walker bell-hestia">
+                    <img src="../src/assets/images/bellhestia.gif" alt="Bell et Hestia">
+                </div>
+                <div class="walker lili-croze">
+                    <img src="../src/assets/images/lilicroze.gif" alt="Lili et Crozzo">
+                </div>
+            </div>
+        </div>
+    </div>
 
-		<img src="../src/assets/images/bellhestia.gif" alt="bell et hestia">
-		<img src="../src/assets/images/lilicroze.gif" alt="croze et lili ">
-		</div>
-		<h1>Au revoir !!!!</h1>
-
-		
-	</header>
-	
-	<section>
-	<p>
-		Passer une bonne aventure dans le monde de danmachi et a bientot
-	</p>
-	
-	
-
-	</section>
-	
-	<footer>
-		<p></p>
-	</footer>
-
+    <!-- Texte au revoir en dessous -->
+    <div class="end-message">
+        <h1>Au revoir !!!!</h1>
+        <p>Passe une bonne aventure dans le monde de danmachi et à bientôt</p>
+    </div>
 
 </body>
 </html>

@@ -1,34 +1,70 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-	<title>Saison 1</title>
-	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="../src/css/pages/seasons.css">
-	<link href="https://fonts.googleapis.com/css?family=Anton|Abel" rel="stylesheet"> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saison 1 - Danmachi</title>
+    <link rel="stylesheet" type="text/css" href="../src/css/pages/seasons.css">
+    <link href="https://fonts.googleapis.com/css?family=Anton|Abel" rel="stylesheet">
 </head>
-<body>
+<body class="season-page season-1">
+    
+    <div class="season-container">
+        <!-- Header avec logo -->
+        <header class="season-header">
+            <div class="logo-wrapper">
+                <img src="../src/assets/images/logo-s1.png" alt="Logo Danmachi Saison 1" class="season-logo">
+            </div>
+            <div class="title-badge">
+                <span class="season-label">Saison 1</span>
+                <h1>Familia Myth</h1>
+            </div>
+        </header>
 
-	<header>
-		<img src="../src/assets/images/logo-s1.png" alt="Logo saison 1">
-		<h1>Saison 1</h1>
+        <!-- Contenu principal -->
+        <main class="season-content">
+            <!-- Synopsis -->
+            <section class="content-card synopsis-card">
+                <div class="card-header">
+                    <span class="card-icon">📖</span>
+                    <h2>Synopsis</h2>
+                </div>
+                <div class="card-body">
+                    <p class="lead">L'histoire nous entraîne dans les mésaventures d'un groupe de guerriers.</p>
+                    
+                    <p>La ville labyrinthe, <strong>Orario</strong>, aussi appelée <em>Dungeon</em>, est le lieu où se dirigent tous les guerriers qui veulent vivre dangereusement.</p>
+                    
+                    <p><strong>Bell Cranel</strong> est un jeune garçon qui veut devenir plus fort après avoir été sauvé par <strong>Aiz Wallenstein</strong>, une belle et implacable épéiste, qui ne le laisse pas indifférent.</p>
+                    
+                    <p>À ses côtés, Cranel peut compter sur <strong>Hestia</strong>, une divinité immature, qui est tombée amoureuse de lui et qui s'entraident mutuellement dans leurs quêtes.</p>
+                </div>
+            </section>
 
-		
-	</header>
-	
-	<section>
-	<p>    L’histoire nous entraîne dans les mésaventures d’un groupe de guerriers.</p>
+            <!-- Bande-annonce -->
+            <section class="content-card video-card">
+                <div class="card-header">
+                    <span class="card-icon">▶️</span>
+                    <h2>Bande-annonce</h2>
+                </div>
+                <div class="card-body">
+                    <div class="video-wrapper">
+                        <iframe 
+                            src="https://www.youtube.com/embed/sbcwRt0y4kY" 
+                            title="Bande-annonce Saison 1"
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+            </section>
+        </main>
 
-   <p>  La ville labyrinthe, Orario, aussi appelé Dungeon est le lieu où se dirige tous les guerriers qui veulent vivre dangereusement.</p>
-
-    <p> Bell Cranel est un jeune garçon qui veut devenir plus fort après avoir été sauvé par Aiz Wallenstein, une belle et implacable épéiste, qui ne le laisse pas indifférent.</p>
-
-   <p>  A ses côtés, Cranel peut compter sur Hestia, une divinité immature, qui est tombée amoureux de lui et qui s’aident mutuellement dans leurs quêtes. </p>
-	</section>
-	<section>
-		<embed width="420" height="345" src="https://www.youtube.com/embed/sbcwRt0y4kY">
-		</embed>
-	</section>
-	
+        <!-- Footer -->
+        <footer class="season-footer">
+            <p>© Danmachi - Familia Myth</p>
+        </footer>
+    </div>
 
 </body>
 </html>

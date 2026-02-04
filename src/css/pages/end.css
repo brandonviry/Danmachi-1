@@ -1,31 +1,240 @@
-h1 {
-    text-align: center;
-    font-family: "Anton", sans-serif;
-    color: #0e2b40;
-    font-size: 34px;
-}
-p {
-    font-family: "Abel", sans-serif;
-    text-align: center;
-    font-weight: bold;
-    font-size: 24px;
+/* ============================================
+   DANMACHI - PAGE FIN
+   Fenêtre macOS avec personnages qui marchent sur place
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-embed {
-    width: 100%;
+html, body {
+    height: 100%;
+    overflow: hidden;
 }
+
 body {
+    font-family: "Abel", sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f0b02 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+/* ============================================
+   FENÊTRE macOS
+   ============================================ */
+
+.game-window {
+    width: 800px;
+    height: 450px;
+    background: #2a2a2a;
+    border-radius: 12px;
+    box-shadow: 
+        0 20px 60px rgba(0, 0, 0, 0.6),
+        0 0 0 1px rgba(255, 255, 255, 0.1),
+        0 0 40px rgba(192, 196, 205, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Barre de titre */
+.window-titlebar {
+    height: 32px;
+    background: linear-gradient(180deg, #3a3a3a 0%, #2a2a2a 100%);
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    gap: 10px;
+    border-bottom: 1px solid #1a1a1a;
+}
+
+.window-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.btn {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: block;
+}
+
+.btn.close {
+    background: #ff5f56;
+    border: 1px solid #e0443e;
+}
+
+.btn.minimize {
+    background: #ffbd2e;
+    border: 1px solid #dea123;
+}
+
+.btn.maximize {
+    background: #27c93f;
+    border: 1px solid #1aab29;
+}
+
+.window-title {
+    flex: 1;
+    text-align: center;
+    font-family: "Abel", sans-serif;
+    font-size: 0.85rem;
+    color: #c0c4cd;
+    margin-right: 60px;
+}
+
+/* ============================================
+   ÉCRAN DE JEU
+   ============================================ */
+
+.game-screen {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    background: #000;
+}
+
+/* Babel comme background - étendu sur toute la largeur */
+.babel-bg {
+    position: absolute;
+    inset: 0;
     background-image: url("../../assets/images/babel.png");
     background-size: 100% auto;
-    background-repeat: repeat-y;
-
-    top: 0px;
-    bottom: 0px;
-}
-header {
-    margin-top: 20%;
+    background-position: center bottom;
+    background-repeat: no-repeat;
 }
 
-div {
-    margin-left: 40%;
+/* Zone des personnages - collés au centre */
+.walkers {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: flex-end;
+    gap: 0;
+}
+
+.walker {
+    position: relative;
+}
+
+.walker img {
+    height: 140px;
+    width: auto;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5));
+}
+
+/* Animation de marche sur place */
+.bell-hestia img {
+    animation: walkInPlace 0.6s steps(2) infinite;
+}
+
+.lili-croze img {
+    height: 150px;
+    animation: walkInPlace 0.6s steps(2) infinite;
+    animation-delay: 0.1s;
+}
+
+/* Animation de marche sur place */
+@keyframes walkInPlace {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-4px);
+    }
+}
+
+/* ============================================
+   MESSAGE AU REVOIR
+   ============================================ */
+
+.end-message {
+    text-align: center;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.end-message h1 {
+    font-family: "Anton", sans-serif;
+    font-size: 2.5rem;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 
+        0 0 20px rgba(192, 196, 205, 0.5),
+        2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 0.5rem;
+}
+
+.end-message p {
+    font-family: "Abel", sans-serif;
+    font-size: 1.1rem;
+    color: #c0c4cd;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 900px) {
+    .game-window {
+        width: 90vw;
+        height: 50vw;
+        max-height: 400px;
+    }
+}
+
+@media (max-width: 600px) {
+    .game-window {
+        width: 95vw;
+        height: 53vw;
+    }
+    
+    .window-titlebar {
+        height: 28px;
+    }
+    
+    .btn {
+        width: 10px;
+        height: 10px;
+    }
+    
+    .window-title {
+        font-size: 0.75rem;
+    }
+    
+    .walker img {
+        height: 90px;
+    }
+    
+    .lili-croze img {
+        height: 100px;
+    }
+    
+    .end-message h1 {
+        font-size: 1.8rem;
+    }
+    
+    .end-message p {
+        font-size: 0.95rem;
+    }
 }

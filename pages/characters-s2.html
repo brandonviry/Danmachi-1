@@ -1,72 +1,150 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-	<title>Saison 1</title>
-	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="../src/css/pages/characters-s2.css">
-	<link href="https://fonts.googleapis.com/css?family=Anton|Abel" rel="stylesheet"> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personnages - Saison 1</title>
+    <link rel="stylesheet" type="text/css" href="../src/css/pages/characters.css">
+    <link href="https://fonts.googleapis.com/css?family=Anton|Abel" rel="stylesheet">
 </head>
-<body>
+<body class="characters-page">
+    
+    <div class="characters-container">
+        <!-- Header -->
+        <header class="characters-header">
+            <div class="logo-wrapper">
+                <img src="../src/assets/images/logo-s1.png" alt="Logo Familia Myth" class="page-logo">
+            </div>
+            <div class="title-badge s1-badge">
+                <span class="season-label">Saison 1</span>
+                <h1>Personnages</h1>
+            </div>
+        </header>
 
-	<header>
-		<img src="../src/assets/images/logo-s1.png" alt="Logo saison 1">
-		<h1>Saison 1</h1>
-		<h2>Personnage</h2>
-		
-	</header>
-	<section>
-			<h3> Familia Hestia </h3>
-		  	<img src="../src/assets/images/character-thumb-bell.png" alt="bell" title="Bell" >
-		  	<img src="../src/assets/images/character-thumb-hestia.png" alt="hestia" title="Hestia">
+        <!-- Grille des Familia -->
+        <main class="familia-grid">
+            
+            <!-- Familia Hestia -->
+            <section class="familia-card featured">
+                <div class="familia-header hestia">
+                    <h2>Familia Hestia</h2>
+                </div>
+                <div class="characters-list">
+                    <div class="character-item">
+                        <img src="../src/assets/images/character-thumb-bell.png" alt="Bell Cranel">
+                        <span class="character-name">Bell</span>
+                    </div>
+                    <div class="character-item">
+                        <img src="../src/assets/images/character-thumb-hestia.png" alt="Hestia">
+                        <span class="character-name">Hestia</span>
+                    </div>
+                </div>
+            </section>
 
-  	
-	</section>	
+            <!-- Guilde -->
+            <section class="familia-card">
+                <div class="familia-header guilde">
+                    <h2>Guilde</h2>
+                </div>
+                <div class="characters-list">
+                    <div class="character-item">
+                        <img src="../src/assets/images/character-thumb-eina.png" alt="Eina">
+                        <span class="character-name">Eina</span>
+                    </div>
+                </div>
+            </section>
 
-	<section>
-			<h3>Guilde </h3>
-  			<img src="../src/assets/images/character-thumb-eina.png" alt="eina" title="Eina">
-  
-	</section>
-	<section>
-			<h3> Familia Hephaistios  </h3>
-  	<img src="../src/assets/images/character-thumb-welf.png" alt="welf" title="Welf">
-  	
-	</section>	
-	<section>
-			<h3> Familia Freya </h3>
-  	<img src="../src/assets/images/character-thumb-freya.png" alt="freya" title="Freya">
-  	
-	</section>	
+            <!-- Familia Hephaistios -->
+            <section class="familia-card">
+                <div class="familia-header hephaistios">
+                    <h2>Familia Hephaistios</h2>
+                </div>
+                <div class="characters-list">
+                    <div class="character-item">
+                        <img src="../src/assets/images/character-thumb-welf.png" alt="Welf">
+                        <span class="character-name">Welf</span>
+                    </div>
+                </div>
+            </section>
 
-	<section>
-		<h3> Familia Loki</h3>
-  	<img src="../src/assets/images/character-thumb-ais.png" alt="aiz"  title="Aiz">
-  	<img src="../src/assets/images/character-thumb-loki.png" alt="loki" title="Loki" >
-  	<img src="../src/assets/images/character-thumb-bete.png" alt="beto" title="Beto" >
+            <!-- Familia Freya -->
+            <section class="familia-card">
+                <div class="familia-header freya">
+                    <h2>Familia Freya</h2>
+                </div>
+                <div class="characters-list">
+                    <div class="character-item">
+                        <img src="../src/assets/images/character-thumb-freya.png" alt="Freya">
+                        <span class="character-name">Freya</span>
+                    </div>
+                </div>
+            </section>
 
-  	
-	</section>
-		<section>
-			<h3> Familia Soma </h3>
-  	<img src="../src/assets/images/character-thumb-liliruca.png" alt="liliruca" title="Liliruca" >
-  	
-	</section>	
+            <!-- Familia Loki -->
+            <section class="familia-card">
+                <div class="familia-header loki">
+                    <h2>Familia Loki</h2>
+                </div>
+                <div class="characters-list">
+                    <div class="character-item">
+                        <img src="../src/assets/images/character-thumb-ais.png" alt="Aiz">
+                        <span class="character-name">Aiz</span>
+                    </div>
+                    <div class="character-item">
+                        <img src="../src/assets/images/character-thumb-loki.png" alt="Loki">
+                        <span class="character-name">Loki</span>
+                    </div>
+                    <div class="character-item">
+                        <img src="../src/assets/images/character-thumb-bete.png" alt="Bete">
+                        <span class="character-name">Bete</span>
+                    </div>
+                </div>
+            </section>
 
-	<section>
-		<h3> Pub</h3>
-  	<img src="../src/assets/images/character-thumb-syr.png" alt="syr" title="Syr" >
-  	<img src="../src/assets/images/character-thumb-ryu.png" alt="ryu"  title="Ryu">
-  	<img src="../src/assets/images/character-thumb-anya.png" alt="anya" title="Anya">
-  	<img src="../src/assets/images/character-thumb-chloe.png" alt="chloe"  title="chloe">
-  	
-	</section>
-	
-	
+            <!-- Familia Soma -->
+            <section class="familia-card">
+                <div class="familia-header soma">
+                    <h2>Familia Soma</h2>
+                </div>
+                <div class="characters-list">
+                    <div class="character-item">
+                        <img src="../src/assets/images/character-thumb-liliruca.png" alt="Liliruca">
+                        <span class="character-name">Liliruca</span>
+                    </div>
+                </div>
+            </section>
 
-	
+            <!-- Pub -->
+            <section class="familia-card">
+                <div class="familia-header pub">
+                    <h2>Pub</h2>
+                </div>
+                <div class="characters-list">
+                    <div class="character-item">
+                        <img src="../src/assets/images/character-thumb-syr.png" alt="Syr">
+                        <span class="character-name">Syr</span>
+                    </div>
+                    <div class="character-item">
+                        <img src="../src/assets/images/character-thumb-ryu.png" alt="Ryu">
+                        <span class="character-name">Ryu</span>
+                    </div>
+                    <div class="character-item">
+                        <img src="../src/assets/images/character-thumb-anya.png" alt="Anya">
+                        <span class="character-name">Anya</span>
+                    </div>
+                    <div class="character-item">
+                        <img src="../src/assets/images/character-thumb-chloe.png" alt="Chloe">
+                        <span class="character-name">Chloe</span>
+                    </div>
+                </div>
+            </section>
 
-	
+        </main>
 
+        <footer class="characters-footer">
+            <p>© Danmachi - Familia Myth</p>
+        </footer>
+    </div>
 
 </body>
 </html>
